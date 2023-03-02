@@ -4,8 +4,8 @@ import GlobalNav from "./GlobalNav";
 
 const Header = ({ DEFAULT, NAV }) => {
     return (
-        <header>
-            <Inner>
+        <header className="Header">
+            <Inner className="inner">
                 <h1>
                     <Link to='/'>
                         <img
@@ -13,7 +13,7 @@ const Header = ({ DEFAULT, NAV }) => {
                             alt={DEFAULT.company} />
                     </Link>
                 </h1>
-                <nav>
+                <nav className="GlobalGnb">
                     <GlobalNav NAV={NAV} />
                 </nav>
             </Inner>

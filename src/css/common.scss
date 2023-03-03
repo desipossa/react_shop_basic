@@ -71,7 +71,10 @@
         background-repeat: no-repeat;
         background-size: cover;
 
-        &.on h2 {}
+        &.on h2 {
+            transform: translate(0, 100px);
+            transition: 0.5s;
+        }
 
 
         .inner {

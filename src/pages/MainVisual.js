@@ -2,7 +2,7 @@ import "slick-carousel/slick/slick.css";
 import MainSlide from "react-slick";
 import { BTN, Inner } from "./common";
 import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const MainVisual = ({ DEFAULT_CONTENTS }) => {
     const option = {
@@ -11,7 +11,11 @@ const MainVisual = ({ DEFAULT_CONTENTS }) => {
     }
 
     const s = useRef(null);
-    const [sNum, setSNum] = useState(0)
+    const [sNum, setSNum] = useState();
+
+    useEffect(() => {
+        setSNum(0);
+    }, [])
 
     return (
         <>
@@ -34,6 +38,7 @@ const MainVisual = ({ DEFAULT_CONTENTS }) => {
                     })
                 }
             </MainSlide>
+            <div className="tab">{DEFAULT_CONTENTS[sNum]?.title}</div>
             <div className="arrows">
                 {console.log(s.current)}
                 <button onClick={() => s.current.slickPrev()}>뒤로가기</button>
@@ -48,7 +53,7 @@ const MainVisual = ({ DEFAULT_CONTENTS }) => {
                 {
                     DEFAULT_CONTENTS.map((_, slideIndx) => {
                         return (
-                            <li><button onClick={() => s.current.slickGoTo(slideIndx)}>{slideIndx + 1}</button></li>
+                            <li className={slideIndx === sNum ? 'on' : ''}><button onClick={() => s.current.slickGoTo(slideIndx)}>{slideIndx + 1}</button></li>
                         )
                     })
                 }

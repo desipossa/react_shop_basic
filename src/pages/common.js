@@ -17,3 +17,19 @@ ${props => props.color && css`
 `}
 
 `
+
+export const DEFAULT_SECTION = styled.section`
+padding: 100px 0;
+text-align: center;
+
+${props => props.gBg && css`
+background: #f9f9f9;
+`}
+
+${props => props.dBg && css`
+background: #333333;
+color: #fff;
+`}
+
+
+`

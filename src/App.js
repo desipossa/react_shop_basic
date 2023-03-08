@@ -23,7 +23,7 @@ const App = () => {
             {/* <MainYoutube /> */}
             <MainProduct DEFAULT_PRODUCT={DEFAULT_PRODUCT} DEFAULT_CONTENTS={DEFAULT_CONTENTS} />
             <MainTab notice={notice} event={event} DEFAULT_CONTENTS={DEFAULT_CONTENTS} />
-            {/* <Footer DEFAULT={DEFAULT} NAV={NAV} /> */}
+            <Footer DEFAULT={DEFAULT} NAV={NAV} />
         </>
     )
 }
